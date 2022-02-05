@@ -15,6 +15,7 @@ class CreateTenantsTable extends Migration
     {
         Schema::create('tenants', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tenant_id');
             $table->uuid('contract');
             $table->boolean('is_active');
             $table->timestamps();
