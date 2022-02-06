@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tenant extends Model
 {
     use HasFactory;
+
+    public function stores()
+    {
+        return $this->hasMany(Store::class);
+    }
 }

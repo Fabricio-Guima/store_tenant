@@ -49,6 +49,7 @@ class ProductController extends Controller
         $data = $request->all();
 
         $product = $store->first()->products()->create($data);
+       
 
         $product->categories()->sync($request->categories);
 
@@ -98,7 +99,7 @@ class ProductController extends Controller
 
         session()->flash('message', ['type' => 'success', 'body' => 'Sucesso ao atualizar produto']);
 
-        return redirect()->route('admin.products.edit', $product);
+        return redirect()->route('admin.products.index', $product);
     }
 
     /**
